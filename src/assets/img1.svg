@@ -1,0 +1,12 @@
+<svg version="1.2" baseProfile="tiny-ps" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" width="140" height="140">
+	<title>Vector-svg</title>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #8500d7 } 
+		.shp1 { fill: #00ffd1 } 
+		.shp2 { fill: #ff007a } 
+	</style>
+	<path id="Layer" class="shp0" d="M115.3 22C59.37 22 14 71.4 14 132.3L115.3 132.3L115.3 22Z" />
+	<path id="Layer" class="shp1" d="M61.44 93.18C38.35 93.18 19.7 74.52 19.7 51.44C19.7 28.35 38.35 9.7 61.44 9.7C84.52 9.7 103.18 28.35 103.18 51.44C103.18 74.52 84.52 93.18 61.44 93.18Z" />
+	<path id="Layer" class="shp2" d="M128 29C69.4 29 21.87 80.5 21.87 144L128 144L128 29Z" />
+</svg>
