@@ -20,6 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:  white;
+  /* overflow-x: hidden; */
 }
 
 code {
@@ -37,7 +38,6 @@ a {
 }
 
 .custom-crumb a {
-      /* Navigasjon desktop */
 
       font-style: normal;
       font-weight: bold;
@@ -50,10 +50,7 @@ a {
       margin: 0px 8px;
 }
 
-.bedclass {
-  --bs-breadcrumb-divider: '>';
 
-}
 
 
 .subtitle {
@@ -68,7 +65,7 @@ a {
 .image-cover {
   position: absolute;
   top: 20%;
-  left:-50%;
+  left:-30%;
   /* transform: translate(-50%, -50%); */
   align-items: center;
   padding: 48px;
@@ -77,6 +74,12 @@ a {
   box-shadow: 0px 4px 8px rgba(145, 158, 167, 0.32);
   border-radius: 8px 0px 0px 8px;
  
+}
+
+@media (max-width:767px){
+	.image-cover {
+    left:-10%;
+}
 }
 
 .image-cover blockquote {
@@ -97,13 +100,7 @@ a {
 .img-title {
 font-style: normal;
 font-weight: 500;
-font-size: 32px;
-line-height: 40px;
-/* identical to box height, or 125% */
-
-
-/* Main */
-
+/* font-size: 32px; */
 color: #8500D7;
 }
 
@@ -120,5 +117,65 @@ line-height: 16px;
 color: #707070;
 }
 
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 20px 0 20px 0;
+}
 
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    margin-top : 50px;
+    position  : relative;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid black;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:black;
+}
+#footer a {
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  
+  text-decoration-line: underline;
+  
+  /* Main */
+  
+  color: #8500D7;
+    -webkit-text-decoration-skip: objects;
+}
+
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+
+.custom-btn {
+  
+  background: #FFFFFF;
+  /* Main */
+  
+  border: 2px solid #8500D7;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  content : ">";
+  font-weight: 700;
+}
 

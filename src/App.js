@@ -1,11 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+
+
+//Images
 import Img1 from './assets/img1.svg'
 import Img2 from './assets/img2.svg'
-
+import Ocean from './assets/ocean.png'
+import Girl from './assets/girl.png'
 
 //Here we import our Components
 import Header from './components/Header'
+import Footer from './components/Footer'
 import BreadCrumb from './components/BreadCrumb'
 import ProfileCard from './components/ProfileCard';
 import ThumbPic from './components/ThumbPic';
@@ -16,6 +21,49 @@ import Card from './components/DescriptionCard'
 
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 import ArrowForwardRoundedIcon from '@material-ui/icons/ArrowForwardRounded';
+import Button from './components/Button';
+
+
+const tempData = {
+  thumbPicCaption : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum, between approximately 380 and 450 nanometers.',
+  blockquote : '“The process of making the dye was long, difficult and expensive”'
+}
+
+const cardData = [
+  {
+    img : Img1,
+    desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
+    date: "13-August-2020",
+    title:"Lorem Ipsum"
+  },
+  {
+    img : Img2,
+    desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
+    date: "13-August-2020",
+    title:"Lorem Ipsum"
+  },
+  {
+    img : Img1,
+    desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
+    date: "13-August-2020",
+    title:"Lorem Ipsum"
+  },
+]
+
+const paraData = [
+  "Purple is closely associated with violet. In common usage, both refer to colors that are between red and blue in hue, with purples closer to red and violets closer to blue. Similarly, in the traditional painters' color wheel, purple and violet are both placed between red and blue, with purple is closer to red",
+  "In humans, the L (red) cone in the eye is primarily sensitive to long wavelength light in the yellow-red region of the spectrum, but is also somewhat sensitive to the shorter wavelength violet light that primarily stimulates the S (blue) cone.",
+  "As a result, when violet light strikes the eye, the S-cone is stimulated strongly and the L-cone is stimulated weakly. Accordingly, strong blue light mixed with weaker red light can mimic this pattern of stimulation, causing humans to perceive colors that the same hue as violet, but with lower saturation.",
+  "As a result, when violet light strikes the eye, the S-cone is stimulated strongly and the L-cone is stimulated weakly."
+]
+
+const authorInfo = {
+  img : Girl,
+  title : "Projectmanager Dekode",
+  readTime : "5 min read",
+  datePub : "2 june",
+  name : "John Doe"
+}
 
 function App() {
   return (
@@ -29,25 +77,35 @@ function App() {
       <div id="content" class="container" >
         <div className="row justify-content-center" >
           <div className="col-12 col-md-8 col-lg-7 " >
-            <ProfileCard/>
-            <Paragraph text="Purple is closely associated with violet. In common usage, both refer to colors that are between red and blue in hue, with purples closer to red and violets closer to blue. Similarly, in the traditional painters' color wheel, purple and violet are both placed between red and blue, with purple is closer to red" />
-            <ThumbPic/>
-            <Paragraph text="In humans, the L (red) cone in the eye is primarily sensitive to long wavelength light in the yellow-red region of the spectrum, but is also somewhat sensitive to the shorter wavelength violet light that primarily stimulates the S (blue) cone." />
+            <ProfileCard authorInfo={authorInfo} />
+            <Paragraph text={paraData[0]} />
+            <ThumbPic blockquote={tempData.blockquote} img={Ocean} caption={tempData.thumbPicCaption}/>
+            <Paragraph text={paraData[1]} />
             <Topic text="As a Result" />
-            <Paragraph text="As a result, when violet light strikes the eye, the S-cone is stimulated strongly and the L-cone is stimulated weakly. Accordingly, strong blue light mixed with weaker red light can mimic this pattern of stimulation, causing humans to perceive colors that the same hue as violet, but with lower saturation." />
+            <Paragraph text={paraData[2]} />
           </div>
         </div>
-        <div class="row justify-content-between align-content-around  col-12" data-mdb-ride="carousel" >
-          <div class="row justify-content-between">
-              <a class="mt-5 btn btn-secondary-outline prev lead" href="" title="go back"><ArrowBackIcon/></a>
-              <Card img={Img1} desc="In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum." date="13-August-2020" title="Lorem Ipsum" />
-              <Card img={Img2} desc="In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum." date="13-August-2020" title="Lorem Ipsum" />
-              <Card img={Img1} desc="In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum." date="13-August-2020" title="Lorem Ipsum" />
-              <a class="mt-5 btn btn-secondary-outline next lead " href="" title="more"><ArrowForwardRoundedIcon/></a>
-
+        <div class="row my-4 " >
+          <div class="row justify-content-between flex-row flex-nowrap fixed ">
+              <a class="mt-5 btn btn-secondary-outline prev lead align-self-center" href="" title="go back"><ArrowBackIcon/></a>
+              {cardData.map((item,index) => {
+                return (
+                  <Card desc={item.desc} title={item.title} img={item.img} date={item.date} key={index} />
+                )
+              })}
+              <br/>
+              <a class="mt-5 btn btn-secondary-outline next lead align-self-center " href="" title="more"><ArrowForwardRoundedIcon/></a>
             </div>
         </div>
+        <div className="row justify-content-center my-4" >
+          <div className="col-12 col-md-8 col-lg-7 " >
+            <Topic text="Why Teft?" />
+            <Paragraph text={paraData[3]} />
+            <Button title="Why Teft?" class="center text-center my-3 custom-btn btn" />
+          </div>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
