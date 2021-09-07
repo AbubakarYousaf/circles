@@ -1,5 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
+import React from "react";
 
 
 //Images
@@ -33,19 +34,19 @@ const cardData = [
   {
     img : Img1,
     desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
-    date: "13-August-2020",
+    date: "17-August-2020",
     title:"Lorem Ipsum"
   },
   {
     img : Img2,
     desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
-    date: "13-August-2020",
+    date: "17-August-2020",
     title:"Lorem Ipsum"
   },
   {
     img : Img1,
     desc : 'In optics, violet is a spectral color: It refers to the color of any different single wavelength of light on the short wavelength end of the visible spectrum.',
-    date: "13-August-2020",
+    date: "17-August-2020",
     title:"Lorem Ipsum"
   },
 ]
@@ -62,7 +63,7 @@ const authorInfo = {
   title : "Projectmanager Dekode",
   readTime : "5 min read",
   datePub : "2 june",
-  name : "John Doe"
+  name : "Jane Doe"
 }
 
 function App() {
@@ -86,7 +87,7 @@ function App() {
           </div>
         </div>
         <div class="row my-4 " >
-          <div class="row justify-content-between flex-row flex-nowrap fixed ">
+''          <div class="row justify-content-between flex-row flex-nowrap fixed col-lg-12 ">
               <a class="mt-5 btn btn-secondary-outline prev lead align-self-center" href="" title="go back"><ArrowBackIcon/></a>
               {cardData.map((item,index) => {
                 return (
@@ -101,7 +102,7 @@ function App() {
           <div className="col-12 col-md-8 col-lg-7 " >
             <Topic text="Why Teft?" />
             <Paragraph text={paraData[3]} />
-            <Button title="Why Teft?" class="center text-center my-3 custom-btn btn" />
+            <div className="align-self-center center text-center"><Button title="Why Teft?" class=" my-3  custom-btn btn  " /></div>
           </div>
         </div>
       </div>

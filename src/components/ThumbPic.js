@@ -5,7 +5,7 @@ export default class ThumbPic extends Component {
   render() {
     return (
       <div className="my-3 position-relative " >
-        <img src={this.props.img} className="img-fluid" style={{borderRadius:' 0px 8px 8px 0px'}} />
+        <img src={this.props.img} className="img-fluid cust-img "  />
         <figcaption class="blockquote-footer my-3 ">
             {this.props.caption}
         </figcaption>
